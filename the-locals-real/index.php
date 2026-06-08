@@ -1,3 +1,8 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <?php include 'includes/config.php'; ?>
 <!DOCTYPE html><html><head><title>The Locals</title><link rel="stylesheet" href="css/styles.css"></head><body>
 <?php include 'includes/header.php'; ?>
