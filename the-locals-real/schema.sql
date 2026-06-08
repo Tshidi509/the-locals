@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS the_locals CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE the_locals;
 
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
