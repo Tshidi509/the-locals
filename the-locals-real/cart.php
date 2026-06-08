@@ -1,0 +1,5 @@
+<?php include 'includes/config.php'; require_role('buyer'); $cart=$_SESSION['cart']??[]; if(isset($_GET['remove'])){unset($_SESSION['cart'][(int)$_GET['remove']]); header('Location: cart.php'); exit;} ?>
+<!DOCTYPE html><html><head><title>Cart</title><link rel="stylesheet" href="css/styles.css"></head><body><?php include 'includes/header.php'; ?><section class="section"><h1>Your Cart</h1><div class="grid">
+<?php $total=0; foreach($cart as $pid=>$qty): $stmt=$pdo->prepare('SELECT * FROM products WHERE id=?');$stmt->execute([$pid]);$p=$stmt->fetch(PDO::FETCH_ASSOC); if(!$p) continue; $total += $p['price']*$qty; ?>
+<div class="card"><h3><?= clean($p['product_name']) ?></h3><p>Qty: <?= $qty ?></p><p class="price">R<?= number_format($p['price']*$qty,2) ?></p><a href="cart.php?remove=<?= $pid ?>">Remove</a></div>
+<?php endforeach; ?></div><br><h2>Total: R<?= number_format($total,2) ?></h2><br><?php if($total>0): ?><a class="btn" href="checkout.php">Checkout</a><?php else: ?><p class="muted">Your cart is empty.</p><?php endif; ?></section></body></html>

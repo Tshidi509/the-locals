@@ -1,0 +1,3 @@
+<?php include 'includes/config.php'; require_role('buyer'); $u=current_user(); ?>
+<!DOCTYPE html><html><head><title>Buyer Dashboard</title><link rel="stylesheet" href="css/styles.css"></head><body><?php include 'includes/header.php'; ?>
+<section class="section"><h1>My Account</h1><div class="dashboard"><a class="dash-card" href="brands.php"><strong>Brands</strong>Shop local brands</a><a class="dash-card" href="products.php"><strong>Drops</strong>Find new products</a><a class="dash-card" href="cart.php"><strong>Cart</strong>Checkout and upload proof</a><a class="dash-card" href="buyer-orders.php"><strong>Orders</strong>Track purchases</a></div></section></body></html>
