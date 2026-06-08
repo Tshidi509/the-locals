@@ -1,11 +1,10 @@
 <?php
 session_start();
 
-$host = "localhost";
-$dbname = "the_locals";
-$username = "root";
-$password = "";
-
+$host = "YOUR_MYSQL_HOST";
+$dbname = "YOUR_DATABASE_NAME";
+$username = "YOUR_USERNAME";
+$password = "YOUR_INFINITYFREE_PASSWORD";
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
